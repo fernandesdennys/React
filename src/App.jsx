@@ -2,6 +2,8 @@ import './App.css';
 import React from 'react';
 
 import Card from './components/layout/Card';
+import TabelaProdutos from './components/repeticao/TabelaProdutos';
+import ListaAlunos from './components/repeticao/ListaAlunos';
 import Familia from './components/basicos/Familia';
 import FamiliaMembro from './components/basicos/FamiliaMembro';
 import Primeiro from './components/basicos/Primeiro';
@@ -14,6 +16,14 @@ export default () => (
     <h1>Fundamentos React (Arrow Function)</h1>
 
     <div className="Cards">
+      <Card titulo="#07 Tabela de Produtos" color="#D0A62F">
+        <TabelaProdutos/>
+      </Card>
+
+      <Card titulo="#06 Repetilção" color="#D4191F">
+        <ListaAlunos></ListaAlunos>
+      </Card>
+
       <Card titulo="#05 Componente com Filhos" color="#D0C91F">
         <Familia sobrenome="Fernandes">
           <FamiliaMembro nome="Dennys"/>
