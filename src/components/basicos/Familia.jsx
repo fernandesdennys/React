@@ -1,12 +1,19 @@
-import React from "react";
-import FamiliaMembro from "./FamiliaMembro";
+import React, { cloneElement } from "react";
+/* import FamiliaMembro from "./FamiliaMembro"; */
 
 export default props => {
   return (
     <div>
-      <FamiliaMembro nome="Dennys" sobrenome={props.sobrenome} />
-      <FamiliaMembro nome="Johny" {...props} /> {/* Operador Spread */}
-      <FamiliaMembro nome="Emilly" sobrenome="Fernandes"/>
+      {
+        props.children.map((child, i) => {
+          return cloneElement(child, {...props, key: i}); /* Método com chave */
+
+        /* props.children.map((child) => {
+          return cloneElement(child, props) */
+        })
+        /* MAP (serve para mapear um determinado array em outro array)*/
+      /* React.cloneElement(props.children, props) */
+      }
     </div>
   )
 
