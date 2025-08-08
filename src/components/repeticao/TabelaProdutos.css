@@ -2,11 +2,18 @@
 
 table {
   margin: auto;
-  border-collapse: collapse;
 }
 tr, th, td {
-  border: 1px solid black;
+  
 }
 th {
   padding: 0 40px;
+  background-color: rgb(17, 100, 96);
+}
+.TabelaProdutos .Par {
+  background-color: #4b4b4b;
+  color: white;
+}
+.TabelaProdutos .Impar {
+  background-color: #b5b5b5;
 }
