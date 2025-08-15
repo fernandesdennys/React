@@ -5,5 +5,9 @@
   height: 320px;
   border: 5px;
   overflow: hidden;
-  background-color: red; /* Temporario */
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 1fr 48px 48px 48px 48px 48px;
 }
