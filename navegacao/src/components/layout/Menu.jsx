@@ -1,12 +1,18 @@
 import './Menu.css';
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const Menu = porps => (
 <aside className="Menu">
   <nav>
     <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Sobre</a></li>
+      <li> 
+        <Link to="/">Início</Link>
+      </li>
+      <li>
+        <Link to="/about">Sobre</Link>
+      </li>
     </ul>
   </nav>
 </aside>
