@@ -1,14 +1,16 @@
 import React from 'react';
-import Menu from '../components/layout/Menu'
-import Content from '../components/layout/Content'
+import { BrowserRouter } from 'react-router-dom'; // essa importação mudou
+import Menu from '../components/layout/Menu';
+import Content from '../components/layout/Content';
 import './App.css';
 
-const App = porps => (
-
-<div className="App">
-<Menu></Menu>
-<Content></Content>
-</div>
-)
+const App = (porps) => (
+  <div className="App">
+    <BrowserRouter>
+      <Menu />
+      <Content />
+    </BrowserRouter>
+  </div>
+);
 
 export default App;
