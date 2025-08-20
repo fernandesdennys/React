@@ -1,10 +1,12 @@
-import React from 'react';
+import React from 'react'
+import PageTitle from '../../components/layout/PageTitle'
 
-const NotFound = (porps) => (
-  <div className="NotFound">
-    <h1>404</h1>
-    <h2>ERROR: PAGE NOT FOUND</h2>
-    <p>The post or page that your are looking for euther has just moved or doesn't exist in this server.</p>
-  </div>
-);
-export default NotFound;
+const Home = props => (
+    <div className="Home">
+        <PageTitle error
+            title="404 ERROR: PAGE NOT FOUND"
+            subtitle="The post or page that your are looking for euther has just moved or doesn't exist in this server." />
+    </div>
+)
+
+export default Home
