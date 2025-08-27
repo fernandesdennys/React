@@ -31,9 +31,9 @@ const UseContext = (props) => {
           <button className="btn" onClick={() => addNumber(-1)}>
             -1
           </button>
-          <buttton className="btn" onClick={() => addNumber(+1)}>
+          <button className="btn" onClick={() => addNumber(+1)}>
             +1
-          </buttton>
+          </button>
         </div>
       </div>
       <SectionTitle title="Exercício #02" />

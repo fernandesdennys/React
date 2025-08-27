@@ -1,32 +1,8 @@
 import React, { useReducer } from 'react';
 import PageTitle from '../../components/layout/PageTitle';
 
-const initialState = {
-  cart: [],
-  products: [],
-  user: null,
-  //Foco...
-  number: 0,
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 'addNumber_+2':
-      return { ...state, number: state.number + 2 };
-    case 'MultiplyBy_7':
-      return { ...state, number: state.number * 7 };
-    case 'divideFor_25':
-      return { ...state, number: state.number / 25 };
-    case 'Integer':
-      return { ...state, number: parseInt(state.number, 10) };
-    case 'login':
-      return { ...state, user: { name: action.payload } };
-    case 'RandonloginAndNumber':
-      return { ...state, number: state.number + action.payload };
-    default:
-      return state;
-  }
-}
+import { initialState, reducer } from '../../store';
+import { numberAdd2, login } from '../../store/actions';
 
 const UseReducer = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -44,26 +20,42 @@ const UseReducer = (props) => {
         )}
         <span className="text">{state.number}</span>
         <div>
-          <button className="btn" onClick={() => dispatch({ type: 'login', payload: 'Fernandes' })}>
+          <button className="btn" onClick={() => login(dispatch, 'Fernandes')}>
             login
           </button>
-          <button className="btn" onClick={() => dispatch({ type: 'addNumber_+2' })}>
+          <button className="btn" onClick={() => numberAdd2(dispatch)}>
             +2
           </button>
-          <button className="btn" onClick={() => dispatch({ type: 'MultiplyBy_7' })}>
+          <button
+            className="btn"
+            onClick={() => dispatch({ type: 'MultiplyBy_7' })}
+          >
             *7
           </button>
-          <button className="btn" onClick={() => dispatch({ type: 'divideFor_25' })}>
+          <button
+            className="btn"
+            onClick={() => dispatch({ type: 'divideFor_25' })}
+          >
             /25
           </button>
           <button className="btn" onClick={() => dispatch({ type: 'Integer' })}>
-          Integer
+            Integer
           </button>
-          <button className="btn" onClick={() => dispatch({ type: 'RandonloginAndNumber', payload: -9 })}>
-          -9
+          <button
+            className="btn"
+            onClick={() =>
+              dispatch({ type: 'RandonloginAndNumber', payload: -9 })
+            }
+          >
+            -9
           </button>
-          <button className="btn" onClick={() => dispatch({ type: 'RandonloginAndNumber', payload: +11 })}>
-          +11
+          <button
+            className="btn"
+            onClick={() =>
+              dispatch({ type: 'RandonloginAndNumber', payload: +11 })
+            }
+          >
+            +11
           </button>
         </div>
       </div>
